@@ -20,8 +20,35 @@
     </div>
   </div>
   <div class="relative">
-    <button class="img-down-arrow" type="button" id="user-menu-button">
+    <button class="img-down-arrow" type="button" id="user_menu_button" phx-click={XhistWeb.Layouts.App.toggle_dropdown_menu()}>
       <img src="/images/user-image.svg" alt="Profile image" class="w-8 h-8 round-image-padding"/>
     </button>
+    <div class="dropdown-menu-arrow absolute right-0 mt-2 py-2 w-48 bg-emDark rounded-lg shadow-xl border border-white" phx-click-away={XhistWeb.Layouts.App.toggle_dropdown_menu()} id="dropdown_menu" hidden="true">
+      <%= if @current_user do %>
+      <.link href={~p"/users/settings"} role="menuitem" tabindex="-1" class="menu-item border-b border-white border-opacity-50" method="get" id="user_menu_item_0">
+        Signed in as <%= @current_user.email %>
+      </.link>
+      <.link href="#" role="menuitem" tabindex="-1" class="menu-item" method="get" id="user_menu_item_1">
+        Your Xhists
+      </.link>
+      <.link href="#" role="menuitem" tabindex="-1" class="menu-item border-b border-white border-opacity-50" method="get" id="user_menu_item_2">
+        Saved Xhists
+      </.link>
+      <.link href={~p"/users/log_out"} role="menuitem" tabindex="-1" class="menu-item" method="delete" id="user_menu_item_3">
+        Sign out
+      </.link>
+      <% else %>
+        <.link href={~p"/users/log_in"} role="menuitem" tabindex="-1" class="menu-item border-b border-white border-opacity-50" method="get" id="user_menu_item_0">
+          Sign in
+        </.link>
+        <.link href={~p"/users/register"} role="menuitem" tabindex="-1" class="menu-item" method="get" id="user_menu_item_1">
+          Register
+        </.link>
+      <% end %>
+    </div>
   </div>
 </header>
+<main>
+  <.flash_group flash={@flash} />
+  <%= @inner_content %>
+</main>
