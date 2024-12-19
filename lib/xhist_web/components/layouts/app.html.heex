@@ -23,7 +23,7 @@
     <button class="img-down-arrow" type="button" id="user_menu_button" phx-click={XhistWeb.Layouts.App.toggle_dropdown_menu()}>
       <img src="/images/user-image.svg" alt="Profile image" class="w-8 h-8 round-image-padding"/>
     </button>
-    <div class="dropdown-menu-arrow absolute right-0 mt-2 py-2 w-48 bg-emDark rounded-lg shadow-xl border border-white" id="dropdown_menu" hidden="true">
+    <div class="dropdown-menu-arrow absolute right-0 mt-2 py-2 w-48 bg-emDark rounded-lg shadow-xl border border-white" phx-click-away={XhistWeb.Layouts.App.toggle_dropdown_menu()} id="dropdown_menu" hidden="true">
       <%= if @current_user do %>
       <.link href={~p"/users/settings"} role="menuitem" tabindex="-1" class="menu-item border-b border-white border-opacity-50" method="get" id="user_menu_item_0">
         Signed in as <%= @current_user.email %>
