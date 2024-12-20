@@ -18,6 +18,6 @@ defmodule Xhist.Gists.Gist do
   def changeset(gist, attrs) do
     gist
     |> cast(attrs, [:name, :description, :markup_text])
-    |> validate_required([:name, :description, :markup_text])
+    |> validate_required([:name, :user_id])
   end
 end

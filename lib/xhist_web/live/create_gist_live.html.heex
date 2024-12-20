@@ -1,0 +1,18 @@
+<div class="em-gradient flex items-center justify-center">
+  <h1 class="font-brand font-bold text-3xl text-white">Instantly share your thoughts</h1>
+</div>
+
+<.form for={@form} phx-submit="create" phx-change="validate" >
+  <div class="justify-center px-28 w-full space-y-4 mb-10">
+    <.input field={@form[:description]} placeholder="Descrição da Xhist" autocomplete="off" phx-debounce="blur" class="bg-emDark-light" />
+    <div class="bg-emDark rounded-lg border border-emDark-light">
+      <div class="w-[300px] p-1 bg-emDark">
+        <.input field={@form[:name]} placeholder="Nome do arquivo com extensão" autocomplete="off" phx-debounce="blur" />
+      </div>
+      <.input type="textarea" field={@form[:markup_text]} class="area-text rounded-b-lg" placeholder="Escreva o código aqui..." autocomplete="off" phx-debounce="blur" phx-hook="UpdateLineNumbers" />
+    </div>
+    <div class="flex justify-end">
+      <.button class="create-button" phx-disable-with="Criando..." >Create Xhist</.button>
+    </div>
+  </div>
+</.form>

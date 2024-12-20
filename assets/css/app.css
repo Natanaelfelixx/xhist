@@ -45,9 +45,38 @@
 }
 
 .menu-item{
-  @apply block px-4 py-2 text-sm text-white font-brand font-regular
+  @apply block px-4 py-2 text-sm text-white font-brand font-regular mt-1 mb-1;
 }
 
 .menu-item:hover {
-  @apply hover:text-emDark-light
+  @apply hover:bg-emDark-light rounded-xl;
+}
+
+.em-gradient{
+  background-image: linear-gradient(to bottom, #631A61, #551653, #340E33, #010101);
+  height: 225px;
+}
+
+form input[type="text"] {
+  @apply bg-emDark-dark font-brand font-regular text-white text-sm border border-gray-500;
+}
+
+form input[type="text"]:focus {
+  @apply focus:outline-none focus:border-emLavender-dark focus:ring-0;
+}
+
+.area-text {
+  @apply bg-emDark-dark font-brand font-regular text-white text-xs h-[300px] resize-none border-none;
+}
+
+.area-text:focus {
+  @apply focus:outline-none focus:ring-0;
+}
+
+.create-button {
+  @apply bg-emDark-light border-white font-brand font-regular text-black text-base;
+}
+
+.create-button:hover {
+  @apply hover:bg-emPurple text-emDark-dark border-emDark-light
 }

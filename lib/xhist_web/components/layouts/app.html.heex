@@ -12,7 +12,7 @@
       <input 
         type="text" 
         class="rounded-lg focus:outline-none focus:border-emLavender focus:ring-0 px-3 py-1 bg-emDark-dark placeholder-emDark-light text-white font-brand font-regular mr-5 border-white"
-        placeholder="Search..."
+        placeholder="Pesquisar..."
       />
       <button class="mt-2 mr-2 text-white text-lg font-brand font-bold hover:text-emDark-light">
         All xhists 
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div class="relative">
-    <button class="img-down-arrow" type="button" id="user_menu_button" phx-click={XhistWeb.Layouts.App.toggle_dropdown_menu()}>
+    <button class="img-down-arrow hover:bg-emDark hover:opacity-50" type="button" id="user_menu_button" phx-click={XhistWeb.Layouts.App.toggle_dropdown_menu()}>
       <img src="/images/user-image.svg" alt="Profile image" class="w-8 h-8 round-image-padding"/>
     </button>
     <div class="dropdown-menu-arrow absolute right-0 mt-2 py-2 w-48 bg-emDark rounded-lg shadow-xl border border-white" phx-click-away={XhistWeb.Layouts.App.toggle_dropdown_menu()} id="dropdown_menu" hidden="true">
